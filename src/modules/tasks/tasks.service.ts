@@ -12,12 +12,12 @@ export class TasksService {
   async handleParisAirQualityCron() {
     console.log('running cron job');
 
-    // const data: INearestCityResponse | ErrorResponse = await this.airQualityService.findNearestCity({
-    //   latitude: PARIS_LATITUDE,
-    //   longitude: PARIS_LONGITUDE,
-    // });
+    const data: INearestCityResponse | ErrorResponse = await this.airQualityService.findNearestCity({
+      latitude: PARIS_LATITUDE,
+      longitude: PARIS_LONGITUDE,
+    });
 
-    // this.airQualityService.addAirQuality(data);
+    this.airQualityService.addAirQuality(data);
 
     // console.log("****************************************************")
     // console.log("response >>> " , data);
