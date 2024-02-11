@@ -2,8 +2,8 @@ import { HttpService } from '@nestjs/axios';
 import { Injectable, HttpStatus } from '@nestjs/common';
 import { NearestCityQueryDto } from './dto/find-nearest-city.dto';
 import { ConfigService } from '@nestjs/config';
-import { EnvVariables, ErrorResponse, INearestCityResponse } from 'src/common/types';
-import { AirQualityApi, DEFAULT_MESSAGE_ERROR } from 'src/common/constants';
+import { EnvVariables, ErrorResponse, INearestCityResponse } from '../../common/types';
+import { AirQualityApi, DEFAULT_MESSAGE_ERROR } from '../../common/constants';
 import { InjectModel } from '@nestjs/mongoose';
 import { AirQuality } from './entities/air-quality.entity'
 import { Model } from 'mongoose';
@@ -31,7 +31,6 @@ export class AirQualityService {
       const {data} = await this.httpService.axiosRef.get(
         `${AirQualityApi.NEAREST_CITY}?lat=${queryParams.latitude}&lon=${queryParams.longitude}&key=${this.configService.get('IqAirApiKey')}`
         );
-        return data.data;
         return {pollution: data.data.current?.pollution};
     }
     catch(e) {
