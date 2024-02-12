@@ -17,10 +17,10 @@ export class TasksService {
       longitude: PARIS_LONGITUDE,
     });
 
-    this.airQualityService.addAirQuality(data);
-
-    // console.log("****************************************************")
-    // console.log("response >>> " , data);
-
+    this.airQualityService.addAirQuality({
+      country: data.country,
+      city: data.city,
+      pollution: data.current.pollution
+    });
   }
 }

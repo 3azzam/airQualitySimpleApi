@@ -28,7 +28,7 @@ describe('AppController (e2e)', () => {
     return request(app.getHttpServer()).get('/air-quality').expect(400);
   });
 
-  it('/ (GET) get air-quality with no long and lat and it should return 200 success', () => {
+  it('/ (GET) get air-quality with long and lat and it should return 200 success', () => {
     return request(app.getHttpServer()).get('/air-quality').query({latitude:PARIS_LATITUDE , longitude: PARIS_LONGITUDE }).expect(200);
   });
 

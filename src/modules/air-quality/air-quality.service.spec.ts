@@ -50,7 +50,7 @@ describe('AirQualityService', () => {
   it('find findNearestCity', async () => {
     let queryParams: NearestCityQueryDto  = {latitude: 23.233555 , longitude: 45.244554}
     const response:any = await service.findNearestCity(queryParams);
-    expect(response.pollution).toMatchObject({long: 5 , lat: 10})
+    expect(response.current.pollution).toMatchObject({long: 5 , lat: 10})
   })
 
 });

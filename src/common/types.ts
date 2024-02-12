@@ -8,12 +8,29 @@ export type EnvVariables = {
 } 
 
 export type INearestCityResponse = {
-    pollution: {
-        ts : Date,
-        aqius: number,
-        mainus: string,
-        aqicn: number,
-        maincn: string
+    country: string,
+    city: string,
+    state:string,
+    current: {
+        pollution: {
+            ts : Date,
+            aqius: number,
+            mainus: string,
+            aqicn: number,
+            maincn: string
+        }
+    }
+}
+
+export type INearestCityResponseMapper = {
+    result: {
+        pollution: {
+            ts : Date,
+            aqius: number,
+            mainus: string,
+            aqicn: number,
+            maincn: string
+        }
     }
 }
 
