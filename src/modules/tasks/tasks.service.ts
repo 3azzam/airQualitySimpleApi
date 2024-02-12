@@ -8,7 +8,7 @@ import { ErrorResponse, INearestCityResponse } from '../../common/types';
 export class TasksService {
   constructor(private readonly airQualityService: AirQualityService) {}
 
-  @Cron(CronExpression.EVERY_10_SECONDS)
+  @Cron(CronExpression.EVERY_MINUTE)
   async handleParisAirQualityCron() {
     console.log('running cron job');
 
