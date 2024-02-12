@@ -1,8 +1,8 @@
 import { Injectable } from '@nestjs/common';
 import { Cron, CronExpression } from '@nestjs/schedule';
 import { AirQualityService } from '../air-quality/air-quality.service';
-import { PARIS_LATITUDE, PARIS_LONGITUDE } from 'src/common/constants';
-import { ErrorResponse, INearestCityResponse } from 'src/common/types';
+import { PARIS_LATITUDE, PARIS_LONGITUDE } from '../../common/constants';
+import { ErrorResponse, INearestCityResponse } from '../../common/types';
 
 @Injectable()
 export class TasksService {
